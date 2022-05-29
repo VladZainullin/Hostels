@@ -13,6 +13,8 @@ builder.Services.AddScoped<Repository<Document, AppDbContext>>();
 
 builder.Services.AddScoped<Repository<HotelRoomType, AppDbContext>>();
 
+builder.Services.AddScoped<Repository<Building, AppDbContext>>();
+
 #endregion
 
 // Add services to the container.

@@ -25,6 +25,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <AdditionalFiles Include="Pages\Guides\Buildings\Delete.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\Buildings\Edit.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\Buildings\List.cshtml" />
       <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\Delete.cshtml" />
       <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\Edit.cshtml" />
       <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\List.cshtml" />
