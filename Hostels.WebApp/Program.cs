@@ -12,8 +12,8 @@ builder.Services.AddScoped<Repository<GovernmentAgency, AppDbContext>>();
 builder.Services.AddScoped<Repository<Document, AppDbContext>>();
 
 builder.Services.AddScoped<Repository<HotelRoomType, AppDbContext>>();
-
 builder.Services.AddScoped<Repository<Building, AppDbContext>>();
+builder.Services.AddScoped<Repository<Category, AppDbContext>>();
 
 #endregion
 

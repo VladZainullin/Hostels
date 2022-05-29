@@ -1,0 +1,41 @@
+@page "{id:int?}"
+@model Hostels.WebApp.Pages.Guides.Categories.Edit
+
+<form method="post">
+    <input type="hidden" asp-for="Entity.Id"/>
+    <div class="mb-3">
+        <label asp-for="Entity.Floor"></label>
+        <input asp-for="Entity.Floor" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Entity.Floor"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.ViewFromTheWindow"></label>
+        <input asp-for="Entity.ViewFromTheWindow" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Entity.ViewFromTheWindow"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.NumberOfRooms"></label>
+        <input asp-for="Entity.NumberOfRooms" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Entity.NumberOfRooms"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.NumberOfSeats"></label>
+        <input asp-for="Entity.NumberOfSeats" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Entity.NumberOfSeats"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.BuildingId"></label>
+        <select asp-for="Entity.BuildingId" class="form-control" asp-items="Model.Buildings"></select>
+        <span class="text-danger" asp-validation-for="Entity.BuildingId"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.HotelRoomTypeId"></label>
+        <select asp-for="Entity.HotelRoomTypeId" class="form-control" asp-items="Model.HotelRoomTypes"></select>
+        <span class="text-danger" asp-validation-for="Entity.HotelRoomTypeId"></span>
+    </div>
+
+    <div class="d-grid gap-2 d-md-block">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a asp-page="./List" class="btn btn-outline-secondary">Назад</a>
+    </div>
+</form>

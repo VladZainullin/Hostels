@@ -1,0 +1,40 @@
+@page
+@model Hostels.WebApp.Pages.Guides.Categories.List
+
+<h1 class="display-5">Катерории номеров</h1>
+
+<table class="table">
+    <tr>
+        <td>Этаж</td>
+        <td>Вид из окна</td>
+        <td>Кол-во комнат</td>
+        <td>Кол-во мест</td>
+        <td>Корпус</td>
+        <td>Тип номера</td>
+        <td>Редактировать</td>
+        <td>Удалить</td>
+    </tr>
+    @foreach (var entity in Model.Entities)
+    {
+        <tr>
+            <td>@entity.Floor</td>
+            <td>@entity.ViewFromTheWindow</td>
+            <td>@entity.NumberOfRooms</td>
+            <td>@entity.NumberOfSeats</td>
+            <td>@entity.Building?.Title</td>
+            <td>@entity.HotelRoomType?.Title</td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Edit" asp-route-id="@entity?.Id">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Delete" asp-route-id="@entity?.Id">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-page=".\Edit" class="btn btn-primary">Добавить</a>

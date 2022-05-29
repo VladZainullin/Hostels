@@ -9,4 +9,6 @@ public sealed class HotelRoomType : IEntity
     [Required(ErrorMessage = "Введите наименование типа гостиничного номера")]
     [Display(Name = "Тип гостиничного номера")]
     public string? Title { get; set; }
+    
+    public ICollection<Category> Categories { get; set; } = new List<Category>();
 }

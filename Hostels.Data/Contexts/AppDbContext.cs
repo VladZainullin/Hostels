@@ -14,6 +14,8 @@ public sealed class AppDbContext : IdentityDbContext
     
     public DbSet<Building> Buildings { get; set; } = null!;
     
+    public DbSet<Category> Сategories { get; set; } = null!;
+    
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
