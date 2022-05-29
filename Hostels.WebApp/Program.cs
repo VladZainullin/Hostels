@@ -1,5 +1,4 @@
 using Hostels.Core.Entities;
-using Hostels.Core.Entities.Documents;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<Repository<GovernmentAgency, AppDbContext>>();
 builder.Services.AddScoped<Repository<Document, AppDbContext>>();
+
+builder.Services.AddScoped<Repository<HotelRoomType, AppDbContext>>();
 
 #endregion
 

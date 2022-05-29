@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Hostels.Core.Entities.Documents;
+namespace Hostels.Core.Entities;
 
 public sealed class GovernmentAgency : IEntity
 {

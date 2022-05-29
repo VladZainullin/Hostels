@@ -4,19 +4,19 @@ using Hostels.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Hostels.WebApp.Pages.Guides.GovernmentsAgencies;
+namespace Hostels.WebApp.Pages.Guides.HotelRoomTypes;
 
 public class Edit : PageModel
 {
-    private readonly Repository<GovernmentAgency, AppDbContext> _repository;
+    private readonly Repository<HotelRoomType, AppDbContext> _repository;
 
-    public Edit(Repository<GovernmentAgency, AppDbContext> repository)
+    public Edit(Repository<HotelRoomType, AppDbContext> repository)
     {
         _repository = repository;
     }
 
     [BindProperty]
-    public GovernmentAgency? Entity { get; set; }
+    public HotelRoomType? Entity { get; set; }
     
     public async Task<IActionResult> OnGet(int? id, CancellationToken cancellationToken)
     {
@@ -26,7 +26,7 @@ public class Edit : PageModel
         }
         else
         {
-            Entity = new GovernmentAgency();
+            Entity = new HotelRoomType();
         }
         if (Entity == null)
         {

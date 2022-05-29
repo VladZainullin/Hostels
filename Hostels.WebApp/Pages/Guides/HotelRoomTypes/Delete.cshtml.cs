@@ -1,22 +1,21 @@
-using System.Diagnostics;
 using Hostels.Core.Entities;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Hostels.WebApp.Pages.Guides.Documents;
+namespace Hostels.WebApp.Pages.Guides.HotelRoomTypes;
 
 public class Delete : PageModel
 {
-    private readonly Repository<Document, AppDbContext> _repository;
+    private readonly Repository<HotelRoomType, AppDbContext> _repository;
 
-    public Delete(Repository<Document, AppDbContext> repository)
+    public Delete(Repository<HotelRoomType, AppDbContext> repository)
     {
         _repository = repository;
     }
 
-    public Document? Entity { get; set; }
+    public HotelRoomType? Entity { get; set; }
     
     public async Task<IActionResult> OnGet(int id, CancellationToken cancellationToken)
     {

@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using Hostels.Core.Entities.Documents;
 
 namespace Hostels.Core.Entities;
 

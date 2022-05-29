@@ -1,5 +1,4 @@
 using Hostels.Core.Entities;
-using Hostels.Core.Entities.Documents;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;

@@ -4,18 +4,18 @@ using Hostels.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Hostels.WebApp.Pages.Guides.GovernmentsAgencies;
+namespace Hostels.WebApp.Pages.Guides.HotelRoomTypes;
 
 public class List : PageModel
 {
-    private readonly Repository<GovernmentAgency, AppDbContext> _repository;
+    private readonly Repository<HotelRoomType, AppDbContext> _repository;
     
-    public List(Repository<GovernmentAgency, AppDbContext> repository)
+    public List(Repository<HotelRoomType, AppDbContext> repository)
     {
         _repository = repository;
     }
 
-    public IEnumerable<GovernmentAgency> Entities { get; private set; } = new List<GovernmentAgency>();
+    public IEnumerable<HotelRoomType> Entities { get; private set; } = new List<HotelRoomType>();
     
     [BindProperty(SupportsGet = true)]
     public string SearchTerm { get; set; }
