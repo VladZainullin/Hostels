@@ -24,4 +24,10 @@
       <ProjectReference Include="..\Hostels.Data\Hostels.Data.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\Delete.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\Edit.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\List.cshtml" />
+    </ItemGroup>
+
 </Project>

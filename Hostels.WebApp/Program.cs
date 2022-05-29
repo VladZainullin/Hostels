@@ -1,8 +1,18 @@
+using Hostels.Core.Entities;
+using Hostels.Core.Entities.Documents;
 using Hostels.Data.Contexts;
+using Hostels.Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+#region Repositories
+
+builder.Services.AddScoped<Repository<GovernmentAgency, AppDbContext>>();
+builder.Services.AddScoped<Repository<Document, AppDbContext>>();
+
+#endregion
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

@@ -49,6 +49,19 @@ namespace Hostels.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "GovernmentAgencies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GovernmentAgencies", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -154,6 +167,28 @@ namespace Hostels.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Documents",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Series = table.Column<int>(type: "INTEGER", nullable: false),
+                    Number = table.Column<int>(type: "INTEGER", nullable: false),
+                    DateOfIssue = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    GovernmentAgencyId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Documents", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Documents_GovernmentAgencies_GovernmentAgencyId",
+                        column: x => x.GovernmentAgencyId,
+                        principalTable: "GovernmentAgencies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -190,6 +225,11 @@ namespace Hostels.Data.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Documents_GovernmentAgencyId",
+                table: "Documents",
+                column: "GovernmentAgencyId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -210,10 +250,16 @@ namespace Hostels.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Documents");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "GovernmentAgencies");
         }
     }
 }

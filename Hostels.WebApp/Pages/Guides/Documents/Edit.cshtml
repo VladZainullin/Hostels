@@ -1,0 +1,31 @@
+@page "{id:int?}"
+@model Hostels.WebApp.Pages.Guides.Documents.Edit
+
+<form method="post">
+    <input type="hidden" asp-for="Entity.Id"/>
+    <div class="mb-3">
+        <label asp-for="Entity.Series"></label>
+        <input asp-for="Entity.Series" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Entity.Series"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.Number"></label>
+        <input asp-for="Entity.Number" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Entity.Number"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.DateOfIssue"></label>
+        <input asp-for="Entity.DateOfIssue" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Entity.DateOfIssue"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Entity.GovernmentAgency.Id"></label>
+        <select asp-for="Entity.GovernmentAgencyId" class="form-control" asp-items="Model.GovernmentAgencies"></select>
+        <span class="text-danger" asp-validation-for="Entity.GovernmentAgency.Id"></span>
+    </div>
+
+    <div class="d-grid gap-2 d-md-block">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a asp-page="./List" class="btn btn-outline-secondary">Назад</a>
+    </div>
+</form>

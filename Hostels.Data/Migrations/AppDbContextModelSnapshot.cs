@@ -17,6 +17,46 @@ namespace Hostels.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
+            modelBuilder.Entity("Hostels.Core.Entities.Document", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DateOfIssue")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("GovernmentAgencyId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Series")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GovernmentAgencyId");
+
+                    b.ToTable("Documents");
+                });
+
+            modelBuilder.Entity("Hostels.Core.Entities.Documents.GovernmentAgency", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GovernmentAgencies");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -213,6 +253,17 @@ namespace Hostels.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Hostels.Core.Entities.Document", b =>
+                {
+                    b.HasOne("Hostels.Core.Entities.Documents.GovernmentAgency", "GovernmentAgency")
+                        .WithMany("Documents")
+                        .HasForeignKey("GovernmentAgencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GovernmentAgency");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -262,6 +313,11 @@ namespace Hostels.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Hostels.Core.Entities.Documents.GovernmentAgency", b =>
+                {
+                    b.Navigation("Documents");
                 });
 #pragma warning restore 612, 618
         }

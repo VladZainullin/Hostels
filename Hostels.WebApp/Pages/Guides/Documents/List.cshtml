@@ -1,0 +1,36 @@
+@page
+@model Hostels.WebApp.Pages.Guides.Documents.List
+
+<h1 class="display-5">Документы</h1>
+
+<table class="table">
+    <tr>
+        <td>Серия</td>
+        <td>Номер</td>
+        <td>Дата выдачи</td>
+        <td>Государственный орган</td>
+        <td>Редактировать</td>
+        <td>Удалить</td>
+    </tr>
+    @foreach (var entity in Model.Entities)
+    {
+        <tr>
+            <td>@entity.Series</td>
+            <td>@entity.Number</td>
+            <td>@entity.DateOfIssue</td>
+            <td>@entity.GovernmentAgency?.Title</td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Edit" asp-route-id="@entity?.Id">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Delete" asp-route-id="@entity?.Id">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-page=".\Edit" class="btn btn-primary">Добавить</a>
