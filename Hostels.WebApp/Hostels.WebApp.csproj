@@ -37,6 +37,9 @@
       <AdditionalFiles Include="Pages\Guides\Services\Delete.cshtml" />
       <AdditionalFiles Include="Pages\Guides\Services\Edit.cshtml" />
       <AdditionalFiles Include="Pages\Guides\Services\List.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\ServiceTypes\Delete.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\ServiceTypes\Edit.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\ServiceTypes\List.cshtml" />
     </ItemGroup>
 
 </Project>
