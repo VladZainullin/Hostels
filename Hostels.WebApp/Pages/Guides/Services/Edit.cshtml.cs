@@ -1,11 +1,13 @@
 using Hostels.Core.Entities;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Hostels.WebApp.Pages.Guides.Services;
 
+[Authorize]
 public class Edit : PageModel
 {
     private readonly Repository<Service, AppDbContext> _repository;

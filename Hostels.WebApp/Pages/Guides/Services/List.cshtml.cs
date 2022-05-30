@@ -1,12 +1,14 @@
 using Hostels.Core.Entities;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hostels.WebApp.Pages.Guides.Services;
 
+[Authorize]
 public class List : PageModel
 {
     private readonly Repository<Service, AppDbContext> _repository;

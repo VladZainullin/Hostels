@@ -1,6 +1,7 @@
 using Hostels.Core.Entities;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hostels.WebApp.Pages.Guides.Documents;
 
+[Authorize]
 public class Edit : PageModel
 {
     private readonly Repository<Document, AppDbContext> _repository;

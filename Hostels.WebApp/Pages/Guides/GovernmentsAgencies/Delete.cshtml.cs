@@ -1,11 +1,13 @@
 using Hostels.Core.Entities;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Hostels.WebApp.Pages.Guides.GovernmentsAgencies;
 
+[Authorize]
 public class Delete : PageModel
 {
     private readonly Repository<GovernmentAgency, AppDbContext> _repository;
