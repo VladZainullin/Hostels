@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Hostels.Core.Enums;
 
 namespace Hostels.Core.Entities;
 
@@ -12,7 +13,7 @@ public sealed class HotelRoom : IEntity
 
     [Required]
     [Display(Name = "Статус")]
-    public bool Status { get; set; }
+    public StatusEnum Status { get; set; }
 
     public int CategoryId { get; set; }
     public Category? Category { get; set; }

@@ -22,4 +22,9 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Migrations\20220530193619_Изменил тип статуса.cs" />
+      <Compile Remove="Migrations\20220530193619_Изменил тип статуса.Designer.cs" />
+    </ItemGroup>
+
 </Project>

@@ -24,6 +24,10 @@ public class List : PageModel
     {
         Entities = await _context.HotelRooms
             .Include(с => с.Category)
+            .Where(e => e.Title!.StartsWith(SearchTerm)
+                        ||
+                        string.IsNullOrEmpty(SearchTerm))
+            .OrderBy(e => e.Title)
             .ToListAsync(cancellationToken);
         
         return Page();

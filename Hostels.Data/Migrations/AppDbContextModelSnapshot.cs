@@ -114,7 +114,7 @@ namespace Hostels.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("Status")
+                    b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
