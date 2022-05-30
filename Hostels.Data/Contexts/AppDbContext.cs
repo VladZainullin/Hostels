@@ -18,6 +18,8 @@ public sealed class AppDbContext : IdentityDbContext
     
     public DbSet<HotelRoom> HotelRooms { get; set; } = null!;
     
+    public DbSet<Service> Services { get; set; } = null!;
+    
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {

@@ -1,0 +1,45 @@
+@page
+@model Hostels.WebApp.Pages.Guides.Services.List
+
+<h1 class="display-5">Услуги</h1>
+
+<form method="get">
+    <div class="mb-3">
+        <div class="input-group">
+            <div class="input-group-append">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <tr>
+        <td>Наименование</td>
+        <td>Описание</td>
+        <td>Редактировать</td>
+        <td>Удалить</td>
+    </tr>
+    @foreach (var entity in Model.Entities)
+    {
+        <tr>
+            <td>@entity.Title</td>
+            <td>@entity.Description</td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Edit" asp-route-id="@entity?.Id">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Delete" asp-route-id="@entity?.Id">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-page=".\Edit" class="btn btn-primary">Добавить</a>
