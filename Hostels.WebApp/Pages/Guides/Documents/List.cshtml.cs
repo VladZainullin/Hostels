@@ -26,7 +26,7 @@ public class List : PageModel
     
     public async Task<IActionResult> OnGet(CancellationToken cancellationToken)
     {
-        Entities = await _context.Documents
+        Entities = await _context.Set<Document>()
             .Include(d => d.GovernmentAgency)
             .ToListAsync(cancellationToken);
 

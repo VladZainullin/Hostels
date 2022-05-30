@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<IdentityUser> _signInManager
+@inject UserManager<IdentityUser> _userManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -25,29 +28,26 @@
             </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Guides/GovernmentsAgencies/List">Гос</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Documents/List">Документы</a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <button class="btn btn-primary text-dark" style="border: 0px; background-color: white; padding-top: 3px; margin-top: 5px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Справочники
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Documents/List">Документы</a>
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/GovernmentsAgencies/List">Государственные органы</a>
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/HotelRoomTypes/List">Типы номеров</a>
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Buildings/List">Корпуса</a>
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Categories/List">Категории номеров</a>
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/HotelRooms/List">Номера</a>
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Services/List">Услуги</a>
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Guides/ServiceTypes/List">Тип услуги</a>
+                    @if (_signInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-primary text-dark" style="border: 0px; background-color: white; padding-top: 3px; margin-top: 5px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Справочники
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Documents/List">Документы</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/GovernmentsAgencies/List">Государственные органы</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/HotelRoomTypes/List">Типы номеров</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Buildings/List">Корпуса</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Categories/List">Категории номеров</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/HotelRooms/List">Номера</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Services/List">Услуги</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/ServiceTypes/List">Тип услуги</a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    }
                 </ul>
                 <partial name="_LoginPartial"/>
             </div>
@@ -62,7 +62,7 @@
 
 <footer class="border-top footer text-muted">
     <div class="container text-center">
-        &copy; 2022 - Hostels - <a asp-area="" asp-page="/Privacy">Сведения об авторе</a>
+        &copy; 2022 - Hostels - <a asp-area="" asp-page="/Privacy">Конфиденциальность</a>
     </div>
 </footer>
 

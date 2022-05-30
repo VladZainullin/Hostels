@@ -11,12 +11,10 @@ namespace Hostels.WebApp.Pages.Guides.Services;
 [Authorize]
 public class List : PageModel
 {
-    private readonly Repository<Service, AppDbContext> _repository;
     private readonly AppDbContext _context;
-
-    public List(Repository<Service, AppDbContext> repository, AppDbContext context)
+    
+    public List(AppDbContext context)
     {
-        _repository = repository;
         _context = context;
     }
 

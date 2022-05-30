@@ -3,6 +3,19 @@
 
 <h1 class="display-5">Государственные органы</h1>
 
+<form method="get">
+    <div class="mb-3">
+        <div class="input-group">
+            <div class="input-group-append">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+        </div>
+    </div>
+</form>
+
 <table class="table">
     <tr>
         <td>Наименование</td>

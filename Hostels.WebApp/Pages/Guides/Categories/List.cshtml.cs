@@ -24,7 +24,7 @@ public class List : PageModel
     
     public async Task<IActionResult> OnGet(CancellationToken cancellationToken)
     {
-        Entities = await _context.Сategories
+        Entities = await _context.Set<Category>()
             .Include(с => с.Building)
             .Include(с => с.HotelRoomType)
             .ToListAsync(cancellationToken);
