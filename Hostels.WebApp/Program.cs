@@ -14,6 +14,7 @@ builder.Services.AddScoped<Repository<Document, AppDbContext>>();
 builder.Services.AddScoped<Repository<HotelRoomType, AppDbContext>>();
 builder.Services.AddScoped<Repository<Building, AppDbContext>>();
 builder.Services.AddScoped<Repository<Category, AppDbContext>>();
+builder.Services.AddScoped<Repository<HotelRoom, AppDbContext>>();
 
 #endregion
 
@@ -28,6 +29,9 @@ builder.Services
         options =>
         {
             options.SignIn.RequireConfirmedAccount = false;
+            options.SignIn.RequireConfirmedEmail = false;
+            options.SignIn.RequireConfirmedPhoneNumber = false;
+
             options.User.RequireUniqueEmail = true;
         })
     .AddEntityFrameworkStores<AppDbContext>();

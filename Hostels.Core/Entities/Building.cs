@@ -6,6 +6,7 @@ public sealed class Building : IEntity
 {
     public int Id { get; set; }
 
+    [Required]
     [Display(Name = "Корпус")]
     public string? Title { get; set; }
 
