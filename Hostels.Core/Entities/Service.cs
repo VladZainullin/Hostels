@@ -12,4 +12,7 @@ public sealed class Service : IEntity
 
     [Display(Name = "Описание")]
     public string? Description { get; set; }
+
+    public int ServiceTypeId { get; set; }
+    public ServiceType? ServiceType { get; set; }
 }

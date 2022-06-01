@@ -13,6 +13,11 @@
         <input asp-for="Entity.Description" class="form-control"/>
         <span class="text-danger" asp-validation-for="Entity.Description"></span>
     </div>
+    <div class="mb-3">
+        <label>Вид услуги</label>
+        <select asp-for="Entity.ServiceTypeId" class="form-control" asp-items="Model.ServiceTypes"></select>
+        <span class="text-danger" asp-validation-for="Entity.Description"></span>
+    </div>
 
     <div class="d-grid gap-2 d-md-block">
         <button type="submit" class="btn btn-primary">Сохранить</button>

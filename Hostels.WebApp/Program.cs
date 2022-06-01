@@ -1,8 +1,11 @@
+using System.Globalization;
 using Hostels.Core.Entities;
 using Hostels.Data.Contexts;
 using Hostels.Data.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,9 +40,21 @@ builder.Services
 
             options.User.RequireUniqueEmail = true;
         })
+    .AddDefaultUI()
     .AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddRazorPages();
 
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[]
+    {
+        new CultureInfo("en"),
+        new CultureInfo("ru"),
+    };
+    options.DefaultRequestCulture = new RequestCulture("ru");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,6 +73,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+var options = ((IApplicationBuilder)app).ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(options.Value);
 
 app.UseAuthentication();
 app.UseAuthorization();

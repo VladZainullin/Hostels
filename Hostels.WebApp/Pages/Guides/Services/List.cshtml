@@ -20,6 +20,7 @@
     <tr>
         <td>Наименование</td>
         <td>Описание</td>
+        <td>Тип услуги</td>
         <td>Редактировать</td>
         <td>Удалить</td>
     </tr>
@@ -28,6 +29,7 @@
         <tr>
             <td>@entity.Title</td>
             <td>@entity.Description</td>
+            <td>@entity.ServiceType?.Title</td>
             <td>
                 <a class="btn btn-lg" asp-page="./Edit" asp-route-id="@entity?.Id">
                     <i class="fas fa-edit"></i>

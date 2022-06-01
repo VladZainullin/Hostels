@@ -27,6 +27,7 @@ public class List : PageModel
     {
         Entities = await _context
             .Set<Service>()
+            .Include(e => e.ServiceType)
             .Where(e => e.Title!.StartsWith(SearchTerm)
                         ||
                         string.IsNullOrEmpty(SearchTerm))
