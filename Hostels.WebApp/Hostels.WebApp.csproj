@@ -34,6 +34,9 @@
       <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\Delete.cshtml" />
       <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\Edit.cshtml" />
       <AdditionalFiles Include="Pages\Guides\GovernmentsAgencies\List.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\Positions\Delete.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\Positions\Edit.cshtml" />
+      <AdditionalFiles Include="Pages\Guides\Positions\List.cshtml" />
       <AdditionalFiles Include="Pages\Guides\Services\Delete.cshtml" />
       <AdditionalFiles Include="Pages\Guides\Services\Edit.cshtml" />
       <AdditionalFiles Include="Pages\Guides\Services\List.cshtml" />

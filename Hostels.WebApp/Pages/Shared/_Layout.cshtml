@@ -28,18 +28,18 @@
             </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark">
-                            Журнал регистрации
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark">
-                            Заявки
-                        </a>
-                    </li>
                     @if (_signInManager.IsSignedIn(User))
                     {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark">
+                                Журнал регистрации
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark">
+                                Заявки
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <div class="dropdown">
                                 <button class="btn btn-primary text-dark" style="border: 0px; background-color: white; padding-top: 3px; margin-top: 5px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,6 +54,8 @@
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Guides/HotelRooms/List">Номера</a>
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Services/List">Услуги</a>
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Guides/ServiceTypes/List">Тип услуги</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/Positions/List">Должности</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Guides/PriceListTypes/List">Виды прайс листов</a>
                                 </div>
                             </div>
                         </li>

@@ -22,6 +22,10 @@ public sealed class AppDbContext : IdentityDbContext
     
     public DbSet<ServiceType> ServiceTypes { get; set; } = null!;
     
+    public DbSet<Position> Positions { get; set; } = null!;
+    
+    public DbSet<PriceListType> PriceListTypes { get; set; } = null!;
+    
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {

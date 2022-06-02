@@ -22,6 +22,10 @@ builder.Services.AddScoped<Repository<HotelRoom, AppDbContext>>();
 builder.Services.AddScoped<Repository<Service, AppDbContext>>();
 builder.Services.AddScoped<Repository<ServiceType, AppDbContext>>();
 
+builder.Services.AddScoped<Repository<Position, AppDbContext>>();
+
+builder.Services.AddScoped<Repository<PriceListType, AppDbContext>>();
+
 #endregion
 
 // Add services to the container.
