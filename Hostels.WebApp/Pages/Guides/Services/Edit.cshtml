@@ -2,21 +2,21 @@
 @model Hostels.WebApp.Pages.Guides.Services.Edit
 
 <form method="post">
-    <input type="hidden" asp-for="Entity.Id"/>
+    <input type="hidden" asp-for="@Model.Entity!.Id"/>
     <div class="mb-3">
-        <label asp-for="Entity.Title"></label>
-        <input asp-for="Entity.Title" class="form-control"/>
-        <span class="text-danger" asp-validation-for="Entity.Title"></span>
+        <label asp-for="@Model.Entity!.Title"></label>
+        <input asp-for="@Model.Entity!.Title" class="form-control"/>
+        <span class="text-danger" asp-validation-for="@Model.Entity!.Title"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Entity.Description"></label>
-        <input asp-for="Entity.Description" class="form-control"/>
-        <span class="text-danger" asp-validation-for="Entity.Description"></span>
+        <label asp-for="@Model.Entity!.Description"></label>
+        <input asp-for="@Model.Entity!.Description" class="form-control"/>
+        <span class="text-danger" asp-validation-for="@Model.Entity!.Description"></span>
     </div>
     <div class="mb-3">
         <label>Вид услуги</label>
-        <select asp-for="Entity.ServiceTypeId" class="form-control" asp-items="Model.ServiceTypes"></select>
-        <span class="text-danger" asp-validation-for="Entity.Description"></span>
+        <select asp-for="@Model.Entity!.ServiceTypeId" class="form-control" asp-items="@Model.ServiceTypes"></select>
+        <span class="text-danger" asp-validation-for="@Model.Entity!.Description"></span>
     </div>
 
     <div class="d-grid gap-2 d-md-block">

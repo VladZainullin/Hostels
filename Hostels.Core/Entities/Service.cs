@@ -15,4 +15,9 @@ public sealed class Service : IEntity
 
     public int ServiceTypeId { get; set; }
     public ServiceType? ServiceType { get; set; }
+
+    public ICollection<TheServiceIsIncludedInThePrice> TheServiceIsIncludedInThePrices { get; set; } =
+        new List<TheServiceIsIncludedInThePrice>();
+
+    public ICollection<PriceListRecord> PriceListRecords { get; set; } = new List<PriceListRecord>();
 }

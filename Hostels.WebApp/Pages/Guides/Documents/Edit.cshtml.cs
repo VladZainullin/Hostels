@@ -69,7 +69,7 @@ public class Edit : PageModel
         }
         else
         {
-            await _repository.AddAsync(Entity, cancellationToken);
+            await _repository.AddAsync(Entity!, cancellationToken);
         }            
         
         await _repository.SaveChangesAsync(cancellationToken);

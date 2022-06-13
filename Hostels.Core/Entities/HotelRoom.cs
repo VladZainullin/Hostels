@@ -17,4 +17,7 @@ public sealed class HotelRoom : IEntity
 
     public int CategoryId { get; set; }
     public Category? Category { get; set; }
+    
+    public ICollection<TheServiceIsIncludedInThePrice> TheServiceIsIncludedInThePrices { get; set; } =
+        new List<TheServiceIsIncludedInThePrice>();
 }

@@ -28,4 +28,8 @@ public sealed class Category : IEntity
     public Building? Building { get; set; }
 
     public ICollection<HotelRoom> HotelRooms { get; set; } = new List<HotelRoom>();
+    
+    public ICollection<BookingRequest> BookingRequests { get; set; } = new List<BookingRequest>();
+    
+    public ICollection<PriceListRecord> PriceListRecords { get; set; } = new List<PriceListRecord>();
 }
